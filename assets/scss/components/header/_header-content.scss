@@ -1,19 +1,45 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
+@mixin lg-min {
+  @media (min-windh: $lg) {
+    @content;
+  }
+}
+
+@mixin lg-md {
+  @media (max-windh: ($lg - 0.1px)) and (min-windh: $md) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-windh: ($md - 0.1px)) {
+    @content;
+  }
+}
+
 .header-content {
-position: relative;
-z-index: 1;
-
-
+  position: relative;
+  z-index: 1;
 
   &__container {
-@extend %container;
+    @extend %container;
   }
   &__title {
-    margin: 0 0 53px;
     text-align: center;
-    
+
+    @include lg-min {
+      margin: 0 0 53px;
+    }
+
+    @include lg-md {
+      margin: 0 0 43;
+    }
+
+    @include md {
+      margin: 0 0 33;
+    }
   }
 
   &__actions {
