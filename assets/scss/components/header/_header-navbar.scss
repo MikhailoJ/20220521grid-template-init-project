@@ -107,16 +107,25 @@
 
     @include md {
       display: none;
-      @include unlist;
-    }
 
-    &.header-navbar__list--active {
-      display: block;
-      position: absolute;
+      @include unlist;
+      @include box-shadow;
+      
       background-color: rgba($color-gray-dark, 0.9);
+      position: absolute;
+
       top: 100%;
       right: $gap;
       text-align: right;
+    }
+
+    &.header-navbar__list--active {
+      //display: block;
+      position: absolute;
+      top: 100%;
+      right: $gap;
+      z-index: 2;
+      opacity: 1;
     }
   }
 
