@@ -1,0 +1,29 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+$local-gap: calc(40px / 3);
+
+.section-form {
+  width: 1920px;
+  height: 120px;
+  background-color: $color-primary;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.section-form__action {
+  display: grid;
+  grid-template-rows: repeat(3, calc(33.33vh - #{$local-gap}));
+
+}
+
+.section-form__btn {
+  display: flex;
+  justify-content: center;
+  margin-top: $gap;
+  margin-bottom: $gap;
+
+  @include sm-min {
+    margin-bottom: $gap-lg;
+  }
+}
