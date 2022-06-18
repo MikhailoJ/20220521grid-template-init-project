@@ -1,0 +1,34 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.section-post {
+  width: 1300px;
+  height: 53px;
+  font-size: 40px;
+  letter-spacing: 4px;
+  line-height: 48px;
+  color: $color-primary;
+  font-weight: 700;
+  font-family: "Roboto Slab";
+  margin: auto;
+  padding-right: $gap;
+  padding-left: $gap;
+}
+
+.section-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $gap;
+  padding-bottom: $gap;
+}
+
+.section-post__text-lg {
+  width: 640px;
+  height: 250px;
+  background-color: #eeeeee;
+}
+.section-post__text-sm {
+  width: 310px;
+  height: 250px;
+  background-color: #eeeeee;
+}
