@@ -19,6 +19,8 @@ h1 {
   font-weight: 300;
   font-family: $font-header;
   line-height: 1.2em;
+  margin-top: 0;
+  margin-bottom: 53px;
 
   @include lg-min {
     font-size: 3.75rem;

@@ -13,7 +13,6 @@ $local-gap: calc(40px / 3);
 
   &__container {
     display: grid;
-    grid-template-rows: repeat(3, calc(33.33vh - #{$local-gap}));
 
     @include lg-min {
       grid-template-columns: repeat(4, 1fr);
@@ -40,6 +39,14 @@ $local-gap: calc(40px / 3);
     }
     @include sm {
       gap: $gap;
+    }
+
+    @media (min-height: 691px) {
+      grid-auto-rows: calc(33.33vh - #{$local-gap});
+    }
+
+    @media (max-height: 690px) {
+      grid-auto-rows: calc(230px - $local-gap);
     }
   }
 

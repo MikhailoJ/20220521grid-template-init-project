@@ -31,14 +31,15 @@
   border-bottom-color: rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.05);
   font-size: 1.125rem;
-  transition: background-color 0.5s, border-color 0.5s;
-
+  outline: none;
+  transition: 0.5s;
 
   &:hover,
   &:focus {
-    background-color:  rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
     border: 2px solid $color-gray;
     border-bottom-color: $color-light;
+    //color: $color-light;
   }
 }
 .form-button {
@@ -48,11 +49,10 @@
   padding: 0.5em 1em;
   color: $color-light;
   letter-spacing: 0.1em;
-  transition: background-color 0.5s;
-
   border: 2px solid rgba(255, 255, 255, 0);
   border-bottom-color: rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.5s;
 
   font-size: 1.125rem;
   //background-color: rgba($color-gray-light, 0.8);
@@ -62,4 +62,12 @@
     background-color: $color-accent;
     border: 2px solid $color-gray-light;
   }
+}
+
+.form-item::placeholder {
+  color: $color-gray;
+}
+
+.form-item:hover::placeholder {
+  color: rgba($color-light, 50%);
 }
