@@ -4,9 +4,8 @@
 $local-gap: calc(40px / 3);
 
 .section-post {
-  max-width: $ul;
-  letter-spacing: 0.1em;
-  line-height: 1.2em;
+  //letter-spacing: 0.1em;
+  //line-height: 1.2em;
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -15,9 +14,11 @@ $local-gap: calc(40px / 3);
   margin-top: 0;
   margin-bottom: 3rem;
   font-size: 2.5rem;
+  color: $color-primary;
 }
 
 .section-container {
+  max-width: $ul;
   margin: auto;
   padding-right: 20px;
   padding-left: 20px;
@@ -29,14 +30,15 @@ $local-gap: calc(40px / 3);
     "b1 b1 b2 b3"
     "b4 b5 b6 b6";
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: calc(33.33vh - $local-gap);
+  text-align: center;
+  //grid-auto-rows: calc(33.33vh - $local-gap);
   gap: $gap;
   padding-bottom: $gap;
 }
 
 .posts-item {
   transition: background-color 0.5s;
-  background-color: $color-gray-light;
+  background-color: rgb(242, 242, 242);
 }
 
 .posts-item:nth-of-type(1) {
@@ -76,17 +78,37 @@ $local-gap: calc(40px / 3);
   display: grid;
   align-content: center;
   padding: $gap;
+  color: $color-gray;
 }
-
 
 .posts-item__link {
   display: grid;
-  //overflow: hidden;
+  overflow: hidden;
   height: 100%;
   grid-template-rows: 300px 1fr;
+
+  &:hover,
+  &:focus {
+    background-color: $color-gray-light;
+    transition: transform 0.5s;
+  }
 }
 
 .posts-action {
   display: flex;
   justify-content: center;
+}
+
+h3 {
+  letter-spacing: 0.05em;
+  color: $color-gray;
+  font-size: 1.125rem;
+  font-family: "Roboto Slab";
+}
+
+h2 {
+  letter-spacing: 0.1em;
+  color: #2d3651;
+  font-family: "Roboto Slab", serif;
+  line-height: 1.2em;
 }

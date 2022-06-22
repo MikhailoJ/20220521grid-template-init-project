@@ -1,0 +1,84 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.footer {
+  height: 250px;
+  text-align: center;
+  padding: 50px 20px 70px;
+  background-color: $color-primary;
+}
+
+.footer-container {
+  max-width: $ul;
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.footer-social {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+  margin-bottom: 40px;
+  font-size: 36px;
+  line-height: $gap;
+  color: $color-light;
+  font-family: "Font Awesome 5 Brands";
+}
+.social-link {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  transition: color 0.5s;
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+
+}
+
+.footer-social::after {
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 37.5px);
+  width: 75px;
+  height: 2px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social a {
+  display: block;
+  padding: 10px;
+
+}
+
+.footer-caption {
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  color: $color-gray;
+  font-weight: 700;
+  font-family: "Roboto";
+  text-align: center;
+}
+
+.footer-caption__sm {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: -0.5em;
+  letter-spacing: 0.33em;
+  font-weight: 100;
+}
+
+.footer-caption__lg {
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.05em;
+  color: $color-gray-light;
+  font-weight: 700;
+}
