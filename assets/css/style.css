@@ -719,9 +719,9 @@ a {
   padding-right: 20px;
   padding-left: 20px;
   letter-spacing: 0.055em;
+  font-size: 1.125rem;
 }
-
-.section-about__header {
+.secthion-about__header {
   margin-top: 0px;
   margin-bottom: 3rem;
   font-size: 2.5rem;
@@ -730,15 +730,13 @@ a {
   color: #2d3651;
   font-family: "Roboto Slab";
 }
-
-.section-about__text {
+.secthion-about__text {
   margin-top: 0px;
   font-size: 1.125rem;
   color: #637588;
   font-family: "Roboto";
 }
-
-.section-about__image {
+.secthion-about__image {
   display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -878,10 +876,49 @@ a {
 }
 
 .posts-item {
+  overflow: hidden;
   -webkit-transition: background-color 0.5s;
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
   background-color: rgb(242, 242, 242);
+}
+.posts-item__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #2d3651;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+.posts-item__text {
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 20px;
+  color: #637588;
+}
+.posts-item__link {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 300px 1fr;
+}
+.posts-item:hover .posts-item__link {
+  background-color: #e5e5e5;
+}
+.posts-item:hover .posts-item__image {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .posts-item:nth-of-type(1) {
@@ -908,44 +945,6 @@ a {
   grid-area: b6;
 }
 
-.posts-item__image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #2d3651;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.posts-item__text {
-  display: grid;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  padding: 20px;
-  color: #637588;
-}
-
-.posts-item__link {
-  display: grid;
-  overflow: hidden;
-  height: 100%;
-  grid-template-rows: 300px 1fr;
-}
-.posts-item__link:hover, .posts-item__link:focus {
-  background-color: #e5e5e5;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  -o-transition: transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
-}
-
 .posts-action {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -955,11 +954,14 @@ a {
           justify-content: center;
 }
 
+.posts-item h3 {
+  font-family: "Roboto Slab", serif;
+}
+
 h3 {
   letter-spacing: 0.05em;
   color: #637588;
   font-size: 1.125rem;
-  font-family: "Roboto Slab";
 }
 
 h2 {
@@ -967,10 +969,11 @@ h2 {
   color: #2d3651;
   font-family: "Roboto Slab", serif;
   line-height: 1.2em;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
 }
 
 .footer {
-  height: 250px;
   text-align: center;
   padding: 50px 20px 70px;
   background-color: #2d3651;
@@ -1111,6 +1114,9 @@ h2 {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
   }
+  .secthion {
+    grid-template-columns: 1fr 236px;
+  }
 }
 
 @media (max-width: 991.8px) and (min-width: 768px) {
@@ -1124,6 +1130,10 @@ h2 {
   .skills__container {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+  }
+  .section-content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "b1 b1 b2" "b3 b4 b4" "b5 b5 b6";
   }
 }
 
@@ -1187,6 +1197,16 @@ h2 {
   .skills__container {
     gap: 20px;
   }
+  .secthion {
+    grid-template-columns: 1fr;
+  }
+  .section-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: "b1" "b2" "b3" "b4" "b5" "b6";
+  }
+  .section-content {
+    gap: 20px;
+  }
 }
 
 @media (max-windh: 767.9px) {
@@ -1211,6 +1231,10 @@ h2 {
   .skills__container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+  }
+  .section-content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "b1 b2" "b3 b4" "b5 b6";
   }
 }
 

@@ -1,10 +1,7 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
-//$local-gap: calc(40px / 3);
-
 .section-form {
-  //max-width: 1340px;
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: $color-primary;
