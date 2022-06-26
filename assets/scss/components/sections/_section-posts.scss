@@ -4,14 +4,15 @@
 .section-post {
   padding-top: 100px;
   padding-bottom: 100px;
-
 }
 
 .section-post h2 {
   margin-top: 0;
   margin-bottom: 3rem;
-  font-size: 2.5rem;
+
   color: $color-primary;
+
+  font-size: 2.5rem;
 }
 
 .section-container {
@@ -23,58 +24,65 @@
 
 .section-content {
   display: grid;
-  grid-template-areas:
-    "b1 b1 b2 b3"
-    "b4 b5 b6 b6";
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
-  gap: $gap;
+
   padding-bottom: $gap;
-  
+
+  text-align: center;
+
+  gap: $gap;
+  grid-template-areas: "b1 b1 b2 b3"
+  "b4 b5 b6 b6";
+  grid-template-columns: repeat(4, 1fr);
+  @include lg-min {
+    grid-template-columns: repeat(4, 1fr);
+  }
   @include lg-md {
-    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "b1 b1 b2" "b3 b4 b4" "b5 b5 b6";
+    grid-template-columns: repeat(3, 1fr);
   }
-  
   @include md-sm {
-    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "b1 b2" "b3 b4" "b5 b6";
+    grid-template-columns: 1fr 1fr;
   }
-
   @include sm {
-    grid-template-columns: 1fr;
     grid-template-areas: "b1" "b2" "b3" "b4" "b5" "b6";
+    grid-template-columns: 1fr;
   }
-  @include sm {
-    gap: $gap;
-  }
-
 }
 
 .posts-item {
   overflow: hidden;
+
   transition: background-color 0.5s;
+
   background-color: rgb(242, 242, 242);
 
   &__image {
     display: flex;
     align-content: center;
     justify-content: center;
-    background-color: $color-primary;
-    object-fit: cover;
+
     transition: transform 0.5s;
+
+    background-color: $color-primary;
+
+    object-fit: cover;
   }
 
   &__text {
     display: grid;
     align-content: center;
+
     padding: $gap;
+
     color: $color-gray;
   }
 
   &__link {
     display: grid;
+
     height: 100%;
+
     grid-template-rows: 300px 1fr;
   }
 
@@ -124,15 +132,20 @@
 
 h3 {
   letter-spacing: 0.05em;
+
   color: $color-gray;
+
   font-size: 1.125rem;
 }
 
 h2 {
-  letter-spacing: 0.1em;
-  color: #2d3651;
-  font-family: "Roboto Slab", serif;
-  line-height: 1.2em;
   margin-bottom: 3rem;
+
+  letter-spacing: 0.1em;
+
+  color: #2d3651;
+
+  font-family: "Roboto Slab", serif;
   font-size: 2.5rem;
+  line-height: 1.2em;
 }

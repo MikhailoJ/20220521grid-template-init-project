@@ -4,60 +4,77 @@
 .section-form {
   padding-top: 30px;
   padding-bottom: 30px;
+
   background-color: $color-primary;
 }
 .form-input {
   display: grid;
-  gap: $gap;
-  grid-template-columns: repeat(3, 1fr);
+
   max-width: $ul;
   margin: auto;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: $gap;
+  padding-left: $gap;
+
+  gap: $gap;
+  grid-template-columns: repeat(3, 1fr);
+  @include md-min {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include md-sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include sm {
+    grid-template-columns: 1fr;
+  }
 }
 
 .form-item {
   display: block;
+
   width: 100%;
   height: 60px;
   padding-right: 30px;
   padding-left: 30px;
+
+  transition: 0.5s;
   letter-spacing: 0.15em;
+
   color: $color-light;
   border: 2px solid rgba(255, 255, 255, 0);
   border-bottom-color: rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.05);
-  font-size: 1.125rem;
   outline: none;
-  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.05);
+
+  font-size: 1.125rem;
 
   &:hover,
   &:focus {
-    background-color: rgba(255, 255, 255, 0.15);
     border: 2px solid $color-gray;
     border-bottom-color: $color-light;
-    //color: $color-light;
+    background-color: rgba(255, 255, 255, 0.15);
   }
 }
 .form-button {
   display: block;
+
   width: 100%;
   height: 60px;
   padding: 0.5em 1em;
-  color: $color-light;
+
+  transition: 0.5s;
   letter-spacing: 0.1em;
+
+  color: $color-light;
   border: 2px solid rgba(255, 255, 255, 0);
   border-bottom-color: rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.1);
-  transition: 0.5s;
 
   font-size: 1.125rem;
-  //background-color: rgba($color-gray-light, 0.8);
 
   &:hover,
   &:focus {
-    background-color: $color-accent;
     border: 2px solid $color-gray-light;
+    background-color: $color-accent;
   }
 }
 
